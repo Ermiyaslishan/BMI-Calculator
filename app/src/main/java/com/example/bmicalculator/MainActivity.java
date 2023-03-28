@@ -25,8 +25,8 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        height = findViewById(R.id.weightId);
-        weight = findViewById(R.id.heigthId);
+        weight = findViewById(R.id.weightId);
+        height = findViewById(R.id.heigthId);
 
         bmiValue = findViewById(R.id.bmiValue);
 
@@ -39,17 +39,19 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
             double height1 = Double.parseDouble(height.getText().toString());
             double weight1 = Double.parseDouble(weight.getText().toString());
-            double result = (height1 / (weight1 * weight1))* 703; ;
-            bmiValue.setText(Double.toString(Math.round(result)));
+            double weightCal = weight1 / 100;
+            double result = (weightCal / (height1 * height1));
+         bmiValue.setText(Double.toString(result));
+//                bmiValue.setText(String.format(" %.2f Your BMI ",(result)));
             }
         });
 
         calButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-            height.setText("");
-            weight.setText("");
-            bmiValue.setText("");
+            height.setText("0.0");
+            weight.setText("0.0");
+            bmiValue.setText("0.0");
             }
         });
     }
