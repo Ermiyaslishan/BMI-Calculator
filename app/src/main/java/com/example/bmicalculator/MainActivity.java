@@ -39,8 +39,8 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View view) {
             double height1 = Double.parseDouble(height.getText().toString());
             double weight1 = Double.parseDouble(weight.getText().toString());
-            double weightCal = weight1 / 100;
-            double result = (weightCal / (height1 * height1));
+            double HeightCal = height1 / 100;
+            double result = (weight1 / (HeightCal * HeightCal));
          bmiValue.setText(Double.toString(result));
 //                bmiValue.setText(String.format(" %.2f Your BMI ",(result)));
             }
